@@ -1,6 +1,6 @@
 # Loopclosure for A-LOAM
 
-This is a basic implementation of loopclosure detection for A-LOAM, which can be optimized.
+This is a basic implementation of loopclosure detection for A-LOAM, which can be optimized（under developing）.
 
 ## 1. Dependency
 - GTSAM
