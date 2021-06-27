@@ -1,18 +1,18 @@
-<!--?xml version="1.0"?-->
+<?xml version="1.0"?>
 <launch>
     <arg name="use_feature"     default="false"/>
-    <arg name="config_file"     default="$(find sc_loam)/config/sc_config.yaml"/>
+    <arg name="config_file"     default="$(find sc_aloam)/config/sc_config.yaml"/>
 
     <node pkg="sc_aloam" type="loopclosure_aloam" name="sc_optimization" output="screen" args="$(arg use_feature)">
 
-        <param name="config_file"       type="string"        value="$(arg config_file)"/>
-        <param name="use_feature"       type="bool"          value="$(arg use_feature)"/>
-        <param name="leaf_size"         type="float"         value="0.4"/>
-        <remap from="/velodyne_points"          to="/velodyne_cloud_2"/>
-        <remap from="/odom"                     to="/aft_mapped_to_init"/>
-        <remap from="/laser_cloud_corner"       to=""/>
-        <remap from="/laser_cloud_surf"         to=""/>
+        <param name="config_file"     type="string"        value="$(arg config_file)"/>
+        <param name="use_feature"     type="bool"          value="$(arg use_feature)"/>
+        <param name="leaf_size"                            value="0.4"/>
+        <remap from="/velodyne_points"               to="/velodyne_cloud_2"/>
+        <remap from="/odom"                          to="/aft_mapped_to_init"/>
         <!--rosparam file="$(find sc_loam)/config/sc_config.yaml"/-->
+        <!-- <remap from="/laser_cloud_corner"       to=""/> -->
+        <!-- <remap from="/laser_cloud_surf"         to=""/> -->
         
     </node>
 </launch>
